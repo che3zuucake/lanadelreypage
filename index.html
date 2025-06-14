@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>che3zuucake — ✦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #2b1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            flex-direction: column;
+            backdrop-filter: blur(3px);
+        }
+
+        .container {
+            background: rgba(255, 220, 210, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .sparkles {
+            font-size: 1.2em;
+            margin: 15px 0;
+            animation: fadein 3s infinite alternate;
+        }
+
+        @keyframes fadein {
+            from { opacity: 1; }
+            to { opacity: 0.4; }
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>che3zuucake — ✦</h1>
+        <div class="sparkles" id="phrase">But I still remember that day we met in December.</div>
+        <audio autoplay loop controls>
+            <source src="playing-dangerous.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        const phrases = [
+            "But I still remember that day we met in December.",
+            "te estoy esperando desde el capítulo 204, pero no pasa nada."
+        ];
+        let i = 0;
+        setInterval(() => {
+            i = (i + 1) % phrases.length;
+            document.getElementById('phrase').innerText = phrases[i];
+        }, 6000);
+    </script>
+</body>
+</html>
